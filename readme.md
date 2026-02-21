@@ -25,25 +25,9 @@
 
 ## 🚀 Các vấn đề mở rộng
 
-| Nhóm nội dung | Chi tiết nghiên cứu |
-| :--- | :--- |
-| **Design Patterns** | Áp dụng các design pattern và triển khai với Docker để làm demo tường minh và có nội dung hơn. |
-| **Nghiên cứu chéo** | Tìm hiểu nội dung của các nhóm khác, đưa các nội dung đó áp dụng với Docker xem có vấn đề nào phát sinh để lấy giải pháp làm nội dung. |
-
-### 📈 Scaling (Khả năng mở rộng)
-* Khi được đưa vào các container, việc triển khai và mở rộng các service sẽ dễ dàng hơn. Ví dụ như dùng **Kubernetes**, giúp quản lý thêm, bớt các container để cân bằng tải.
-* **Các câu hỏi nghiên cứu:**
-    * Khi nào thì nên compose đủ, khi nào cần Swarm, khi nào cần Kubernetes?
-    * Có khả năng Auto-scaling được không?
-    * Khi nào thì nên scale? Scale xong CPU, Memory có đủ không?
-    * *Keywords:* `Context switching overhead`, `Latency performance`, `OOM kill`.
-
-### 🔍 Service Discovery & Load Balancing
-* Vấn đề IP, Port, Service Network Discovery khi Auto-scaling sẽ khác với việc không thể scale.
-    * *Keywords:* `Docker Internal DNS`, `Docker Swarm`.
-* Vấn đề phân phối request đến các service container sao cho 1 container không bị quá tải (Nội dung này khá *outscope*).
-
-### 🛡️ Tính sẵn sàng (Resilience)
-* Vấn đề khi sập 1 container:
-    * Các request trên container đó có bị fail không?
-    * Hệ thống có tự hồi phục rồi xử lý tiếp hay không?
+* **Áp dụng các design pattern và triển khai với Docker** để làm demo tường minh và có content hơn.
+* **Tìm hiểu các nội dung của các nhóm khác**, đưa các nội dụng đó áp dụng với docker có vấn đề nào phát sinh --> có thể giải quyết lấy content.
+* **Scaling:** * Khi được đưa vào các container, việc triển khai và mở rộng các service sẽ dễ dàng hơn. Ví dụ như dùng Kubernities, giúp quản lý thêm, bớt các container để cân bằng tải. Khi nào thì nên compose đủ , khi nào cần Swarm, khi nào cần Kubernetes, có auto-scaling đc k ? Khi nào thì nên scale ? scale xong cpu, memomry có đủ (Tìm hiểu Keyword: context switching overhead? Latency performance, OOM kill).
+    * Vấn đề ip, port, Service Network Discovery với vấn đề scaling sẽ khác với việc không thể scale (tìm hiểu keyword: Docker Internal DNS, Docker Swarm).
+* **Vấn đề phân phối request** đến các service container sao cho 1 container k quá tải như nào (khá outscope).
+* **Vấn đề khi sập 1 container**, các request trên container đó có fail, hay hệ thống tự hồi phục rồi xử lý tiếp ?
