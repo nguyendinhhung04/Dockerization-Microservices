@@ -1,0 +1,52 @@
+## [ .NET / C# ]
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+publish/
+
+# NuGet Packages
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+## [ Docker & Containerization ]
+# Loại bỏ các file build context của Docker
+.dockerignore
+# Loại bỏ các file cấu hình môi trường chứa thông tin nhạy cảm
+.env
+.env.*
+!.env.example
+# Loại bỏ dữ liệu từ các Docker Volumes (nếu bạn map volume vào folder dự án)
+**/docker-data/
+**/mysql-data/
+**/postgres-data/
+**/mongo-data/
+
+## [ Visual Studio / VS Code ]
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+## [ Infrastructure / Kubernetes / Terraform ]
+.terraform/
+*.tfstate
+*.tfstate.backup
+charts/           # Nếu bạn dùng Helm chart và muốn build riêng
+**/azds.yaml      # Azure Dev Spaces
+
+## [ Logs & Temp ]
+*.log
+logs/
+temp/
