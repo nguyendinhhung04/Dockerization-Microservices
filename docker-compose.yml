@@ -1,0 +1,23 @@
+services:
+
+  myservice:
+    build: ./MyService
+    container_name: myservice_container
+    expose:
+      - "8080"
+    networks:
+      - micro_net
+
+  servicea:
+    build: ./ServiceA
+    container_name: servicea_container
+    ports:
+      - "5001:8080"
+    depends_on:
+      - myservice
+    networks:
+      - micro_net
+
+networks:
+  micro_net:
+    driver: bridge
