@@ -1,52 +1,187 @@
-## [ .NET / C# ]
-# Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Bb]in/
-[Oo]bj/
-publish/
+# ==========================================
+# JAVA
+# ==========================================
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# NuGet Packages
-packages/
-*.nupkg
-project.lock.json
-project.fragment.lock.json
+# Build output
+target/
+build/
+out/
+bin/
 
-## [ Docker & Containerization ]
-# Loại bỏ các file build context của Docker
-.dockerignore
-# Loại bỏ các file cấu hình môi trường chứa thông tin nhạy cảm
+# ==========================================
+# MAVEN
+# ==========================================
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# ==========================================
+# GRADLE (nếu dùng)
+# ==========================================
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# ==========================================
+# SPRING BOOT
+# ==========================================
+HELP.md
+spring-shell.log
+
+# Application properties chứa secrets
+**/application-prod.yml
+**/application-prod.properties
+**/application-staging.yml
+**/application-staging.properties
+**/application-local.yml
+**/application-local.properties
+
+# ==========================================
+# IDE
+# ==========================================
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+.idea_modules/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# VSCode
+.vscode/
+!.vscode/extensions.json
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ==========================================
+# DOCKER
+# ==========================================
+# Docker override files (thường chứa local config)
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Docker env files chứa secrets
 .env
 .env.*
 !.env.example
-# Loại bỏ dữ liệu từ các Docker Volumes (nếu bạn map volume vào folder dự án)
-**/docker-data/
-**/mysql-data/
-**/postgres-data/
-**/mongo-data/
+!.env.template
 
-## [ Visual Studio / VS Code ]
-.vs/
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.user
-*.userosscache
-*.sln.docstates
-*.suo
+# ==========================================
+# KUBERNETES
+# ==========================================
+# Secret manifests - KHÔNG commit lên git
+**/k8s/secrets/
+**/k8s/*-secret.yaml
+**/k8s/*-secret.yml
+**/*secret*.yaml
+**/*secret*.yml
 
-## [ Infrastructure / Kubernetes / Terraform ]
-.terraform/
+# Kubeconfig
+kubeconfig
+kubeconfig.*
+.kube/
+
+# Helm
+**/charts/*.tgz
+**/.helmignore
+
+# Terraform (nếu dùng)
+**/.terraform/
 *.tfstate
-*.tfstate.backup
-charts/           # Nếu bạn dùng Helm chart và muốn build riêng
-**/azds.yaml      # Azure Dev Spaces
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
 
-## [ Logs & Temp ]
-*.log
+# ==========================================
+# SECRETS & CREDENTIALS
+# ==========================================
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+*.truststore
+*credentials*
+*secret*
+!*secret*.example
+**/src/main/resources/keystore/
+
+# JWT & API keys
+jwt.secret
+api-keys.properties
+
+# AWS
+.aws/
+credentials
+
+# GCP
+*-service-account.json
+gcp-key.json
+
+# ==========================================
+# LOGS & MONITORING
+# ==========================================
 logs/
+*.log
+*.log.*
+log/
+npm-debug.log*
+
+# ==========================================
+# OS
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ==========================================
+# MISC
+# ==========================================
+*.pid
+*.seed
+*.pid.lock
+.cache/
+tmp/
 temp/
